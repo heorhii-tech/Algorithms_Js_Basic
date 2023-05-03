@@ -1,0 +1,140 @@
+//ex2.1
+// task :
+//Add all the values between 200 and 2700 (inclusively)
+// that are divisible by 3 or 5,
+// but not both 3 and 5.
+// To solve this task you might want to use the modulus operator.
+
+// psedocode :
+// 1.creat loop for () through
+//2. make filter by if to search numbers witch %3===0 OR %5===0 also
+// !%3===0 AND !%5===0
+
+for (let i = 200; i<=2700 ; i++) {
+    if ((i % 3 === 0 || i % 5 === 0) && !(i % 3 === 0 && i % 5 === 0)) {
+        console.log(i)
+    }
+}
+//diagram :
+//===============================================================
+//         |  %3===0 | %5===0  | !(%3===0 && %5===0 )| result
+//===============================================================
+// 200     |   --   |     ++    |     --           | +
+ //================================================================
+//201      |   +    |   --      |    --              | +
+//=================================================================
+// 202    |   -     |  -        |   +                |  -
+
+//ex2.2
+// psedocode
+//1.make arr= [2, 1, 6, 4, -7]
+//2. make new array for push result ; let arrNew = []
+//3.make loop for() to looping arr.length
+//4. take last index from arr , use .pop ;
+// 5.The pop() method removes the last element from an array and returns that value to the caller.
+// If you call pop() on an empty array, it returns undefined.
+//6. put last index of arr to 0 position in arr . use .unshift
+//7. The unshift() method inserts the given values to the beginning of an array-like object.
+//8. push 0 position of arr to newArr
+let arrNew = []
+let arr = [2, 1, 6, 4, -7];
+for (let k = 0 ; k<arr.length; k++){
+    arr.unshift(arr.pop())
+    arrNew.push(arr[0])
+
+}
+console.log(arrNew)
+
+
+
+
+//ex2.3
+//Create an algorithm that inserts the numbers from 1 to 135 into an array,
+// while replacing the values that are divisible by 3 with the word "Fizz",
+// the numbers that are divisible by 5 with the word "Buzz",
+// and the numbers that are divisible with 3 and 5 with the word "FizzBuzz".
+// Your output should look like [1,2,'Fizz',4,'Buzz',5,'Fizz',7,8,...]
+
+//psedocode
+//1. creat  array for result
+//2. creat function which push to array value
+//3. creat loop for () which looping from 0 to 135
+//4. creat if () to search numbers which %3===0m, change value of numbers = 'Fizz'
+//5. else if () to search numbers which %5===0, change value of numbers = 'Buzz'
+//6. else if () to search numbers which i%3===0 &&%5===0 , change value = 'FizzBuzz'
+
+// CODE :
+let massiv = []
+function change() {
+    for (let i = 0 ; i<135 ; i++){
+        massiv.push(i)
+        if (i%3===0 && i%5===0){
+            massiv[i]= "FizzBuzz"
+        }else if( i%5===0){
+            massiv[i]="Buzz"
+        }else if (i%3===0){
+            massiv[i]= "Fizz"
+        }
+    }
+}
+change()
+console.log(massiv)
+
+
+
+
+
+
+
+
+
+
+
+//ex 2.6
+//Given the array of strings X = ['Man', 'I','Love','The','Matrix','Program'],
+// replace every letter of the word Program with *, so the output would be ['Man', 'I','Love','The','Matrix','*******'].
+// Then make your algorithm work for any word of your choice
+
+//Psedocode
+// 1. Make array x = ['Man', 'I','Love','The','Matrix','Program']
+//2. MAke newArray = ['Man', 'I','Love','The','Matrix','*******']
+//3. Make function communist ()
+//4. put in function 2 value : array , targetWord
+//5. Make loop for() for check targetWord
+//6.Use if() else
+//7. If loop doesent reach not targetWord, push this index to newArray
+//8. If loop reach targetWord - make new lopp for() for looping this indexes
+//9. make global let stars = '' , change value to '*' for each indexes
+//10. return newArray
+
+
+
+//CODE :
+
+ let x = ['Man', 'I','Love','The','Matrix','Program'];
+let newArray=[];
+function communism (arr, targetWord){
+
+    let stars = ''
+    for (let i = 0 ; i <arr.length; i++){
+        if (targetWord===arr[i]){
+            for (let j = 0; j<targetWord.length; j++){
+            stars+='*'
+            }
+            newArray.push(stars)
+        }else {
+            newArray.push(arr[i])
+        }
+
+
+    }
+    return newArray;
+}
+communism(x, "Program");
+console.log(newArray)
+
+
+
+
+
+
