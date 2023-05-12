@@ -1,0 +1,31 @@
+//task :
+//Return the provided string with the first letter of each word capitalized.
+// Make sure the rest of the word is in lower case.
+//
+// For the purpose of this exercise, you should also capitalize on connecting words like "the" and "of".
+//
+// For this algorithm, you can use the split() method.
+//
+// titleCase("I'm a little tea pot")should return a string.
+// titleCase("I'm a little tea pot")should return "I'm A Little Tea Pot".
+// titleCase("sHoRt AnD sToUt") should return "Short And Stout".
+
+//psdedocode:
+// creat function receives string , return string
+// make all words in lower case. redo string to array;
+// loop through array
+// make all indexes [0] in each arr.index in upper case + arr.index with deleted index [0]
+// redo array to string
+// return string
+
+
+function titleCase (string){
+    let arr = string.toLowerCase().split(' ') // make sure all words has  lower case. redo string to array;
+    for (let i = 0 ; i<arr.length; i++){
+        arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1) // make all indexes [0] in each arr.index in
+        //  upper case + arr.index with deleted index [0]
+
+    }return arr.join(" ")//redo array to string
+}
+// примеры использования
+console.log(titleCase("I'm a little tea pot")); // "I'm A Little Tea Pot"
